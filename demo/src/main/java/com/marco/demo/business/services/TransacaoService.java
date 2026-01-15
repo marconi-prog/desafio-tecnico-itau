@@ -38,6 +38,7 @@ public class TransacaoService {
     public List <TransacaoRequestDTO> buscarTransacoes(Integer intervaloBusca){
 
         OffsetDateTime dataHoraIntervalo = OffsetDateTime.now().minusSeconds(60);
-        return listarTransacao.stream().filter(transacoes -> transacoes.datahora().isAfter(dataHoraIntervalo)).toList();
+        return listarTransacao.stream().filter(transacao -> transacao.datahora().isAfter(dataHoraIntervalo)).toList();
     }
+
 }
